@@ -1,0 +1,23 @@
+<div class="container d-flex justify-content-center">
+ 
+    <div class="rows">
+        <h1 class="text">Member List</h1>
+        <div class="flex"><a class="button" [routerLink]="['/create-member']" routerLinkActive="router-link-active">Add new member</a></div>
+        <ng-container *ngFor="let member of members">
+            <div class="card col-md-3" style="width: 17rem;">
+                <img src="{{member.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center;">{{member.name | uppercase}}</h5>
+                    <p class="card-text">Email:{{member.email}}</p>
+                    <p class="card-text">Sex: {{member.sex}}</p>
+                    <p class="card-text">Skill: {{member.skill}}</p>
+                    <p class="card-text">Status: {{member.status}}</p>
+                    <a href="#" class="btn center" style="color: white; background-color: red;">Add to heist</a>
+                    <button (click)= "updateMember(member.id)" class="btn btn-info">Edit</button>
+                </div>
+        </div>
+    </ng-container>
+    </div>
+</div>
+
+  

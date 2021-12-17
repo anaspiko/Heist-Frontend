@@ -4,6 +4,7 @@
     color: white;
     border: 1px solid white;
     margin: 20px;
+    margin-top: 20px;
 }
 
 .row {
@@ -15,10 +16,10 @@
 }
 
 h1 {
-    margin-top: 50px;
+    margin-top: 10px;
     color: white;
     font-family: 'Shalimar', cursive;
-    font-size: 100px;
+    font-size: 130px;
 }
 
 .text {
@@ -27,9 +28,25 @@ h1 {
 }
 
 .button {
-    color: white;
+    color: black;
     background-color: red;
     border: 1px solid black;
-    margin-left: 1100px;
     margin-bottom: 50px;
+    border: 1px solid black;
+    padding: 10px;
+    text-decoration: none;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.btn-dark {
+    border: 1px solid white;
+    margin-left: 4px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 20px;
+    color: white;
 }

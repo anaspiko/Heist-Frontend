@@ -9,6 +9,7 @@ import { MemberListComponent } from './member-list/member-list.component';
 import { UpdateMemberComponent } from './update-member/update-member.component';
 import { FormsModule } from '@angular/forms';
 import { CreateMemberComponent } from './create-member/create-member.component';
+import { HeistComponent } from './heist/heist.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CreateMemberComponent } from './create-member/create-member.component';
     MemberListComponent,
     UpdateMemberComponent,
     CreateMemberComponent,
+    HeistComponent,
     
   ],
   imports: [

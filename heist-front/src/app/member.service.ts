@@ -12,7 +12,7 @@ export class MemberService {
   private getMemberByIdUrlPath = "getMemberById";
   private getAllMembersUrlPath = "getAllMembers";
   private updateMemberUrlPath = "updateMember";
-  private createMemberUrlPath = "createMember"
+  private createMemberUrlPath = "createMember";
 
   constructor(private httpClient : HttpClient) { } //dependencies
 

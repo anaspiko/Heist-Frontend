@@ -9,29 +9,31 @@
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Shalimar', cursive;
     background-color: transparent;
+    margin-top: 80px;
 }
 
 .text-block h1 {
-    font-size: 120px;
+    font-size: 150px;
     position: center;
 }
 
 .text-block h2 {
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
 }
 
-.btn {
-    background-color: red;
-    border: 3px solid black;
+.button {
     color: black;
-    position: absolute;
-    top: 50%;
-    left: 45%;
+    background-color: red;
+    border: 1px solid black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid black;
+    padding: 10px;
+    text-decoration: none;
+    height: 180px;
+    width: 180px;
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    font-size: 20px;
+    font-size: 22px;
 }

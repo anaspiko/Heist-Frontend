@@ -1,0 +1,35 @@
+.container {
+    background-color: black;
+}
+
+.card {
+    height: 90vh;
+    margin: 25px;
+    padding: 25px;
+    background-color: black;
+    color: white;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: 'Shalimar', cursive;
+    font-size: 120px;
+}
+
+.center h1 {
+    font-size: 100px;
+}
+
+.btn {
+    color: black;
+    background-color: black;
+    border: 1px solid red;
+    color: white;
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
+}

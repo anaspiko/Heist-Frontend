@@ -1,11 +1,48 @@
-<div class="container">
-    <div class="card">
-        <h5 class="card-title"></h5>
+<ng-container *ngIf="members.length != 0">
+    <div class="container">
+        <input type="text" placeholder="Heist name">
+        <input type="text" placeholder="Location">
+        <input type="text" placeholder="Value">
     </div>
-    <div class="center">
-        <img src="../../assets/img/mask.png" alt="" style="width: 200px; height: 200px;">
-        <h1>You have no members in a heist</h1>
-        <h2>Call your team!</h2>
-        <button [routerLink]="['/member-list']" class="btn">See all members</button>
+    <div class="card-table container">
+        <div class="heist-member">
+            <table class="table table-responsive">
+                <thead>
+                    <tr> 
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Skill</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let member of members">
+                        <td><img src="{{member.image}}" style="width: 60px; height: 50px;"></td>
+                        <td>{{member.name}}</td>
+                        <td>{{member.email}}</td>
+                        <td>{{member.skill}}</td>
+                        <td>
+                            <button class="btn" (click)= removeMemberFromHeist(member)><i class="bi bi-x-square-fill"></i></button>
+                        </td>
+                    </tr>
+                    <button  type="button" class="btn" (click)="toggleCollapse()">{{isCollapsed? 'START HEIST' : 'STOP HEIST'}}</button>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+</ng-container>
+
+<ng-container *ngIf="members.length == null || members.length == 0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title"></h5>
+        </div>
+        <div class="center">
+            <img src="../../assets/img/mask.png" alt="" style="width: 200px; height: 200px;">
+            <h1>You have no members in a heist</h1>
+            <h2>Call your team!</h2>
+            <button [routerLink]="['/member-list']" class="btn">See all members</button>
+        </div>
+    </div>
+</ng-container>
+

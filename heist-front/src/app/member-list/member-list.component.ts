@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Heist } from '../heist';
+import { HeistService } from '../heist.service';
 import { Member } from '../member';
 import { MemberService } from '../member.service';
 
@@ -11,8 +15,10 @@ import { MemberService } from '../member.service';
 export class MemberListComponent implements OnInit {
 
   members: Member[];
+  heist: Heist;
+  query: String;
 
-  constructor(private memberService: MemberService, private router: Router) { }
+  constructor(private memberService: MemberService, private router: Router, private heistService: HeistService) { }
 
   ngOnInit(): void {
     this.getAllMembers();
@@ -28,11 +34,40 @@ export class MemberListComponent implements OnInit {
     this.router.navigate(['update-member', id]);
   }
 
+  goToHeist() {
+    var id = this.heist == null ? 0 : this.heist.id
+    this.router.navigate(['heist', id])
+  }
+
   deleteMember(id: number) {
     this.memberService.deleteMember(id).subscribe(data => {
       console.log(data)
       this.getAllMembers(); 
     })
+  }
+  addMemberToHeist(member: Member) {
+    var heistId = this.heist == null ? 0 : this.heist.id;
+    this.heistService.addMemberToHeist(heistId, member).subscribe(data => {
+      console.log(data);
+      this.heist = data;
+      var list = this.members;
+      const index = list.indexOf(member, 0);
+      if (index > -1) {
+        list.splice(index, 1);
+      }
+      this.members = list;
+    })
+  }
+
+  searchMembers(text: string) {
+    console.log(text);
+    console.log(this.members);
+    var list = this.members.filter(member => member.skill.includes(text, 0));
+    console.log(list);
+    this.members = list;
+    if(text == "") {
+      this.getAllMembers();
+    }
   }
     
 }

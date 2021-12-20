@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'update-member/:id', component: UpdateMemberComponent},
   {path: '', redirectTo:'member-list', pathMatch: 'full'},
   {path: 'create-member', component: CreateMemberComponent},
-  {path: 'heist', component: HeistComponent}
+  {path: 'heist/:id', component: HeistComponent}
 ]
 
 @NgModule({

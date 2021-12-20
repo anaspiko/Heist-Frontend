@@ -1,5 +1,6 @@
 .container {
     background-color: black;
+   
 }
 
 .card {
@@ -32,4 +33,12 @@
     color: white;
     font-size: 25px;
     font-family:'Times New Roman', Times, serif;
+}
+
+thead {
+    color: white;
+}
+
+td {
+    color: white;
 }

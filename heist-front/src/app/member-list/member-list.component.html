@@ -1,19 +1,19 @@
-
 <div class="container inline block text-center">
     <!--Header-->
     <div class="navbar shadow sm">
         <div class="align-item center d-flex">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Find member by skill">
+                <input type="text" class="form-control" [(ngModel)]="query" (ngModelChange)="searchMembers($event)" placeholder="Find member by skill">
             </div>
             <i class="bi bi-search"></i> 
         </div>
-        <button class="btn" [routerLink]="['/heist']" routerLinkActive="router-link-active" >
+        <button class="btn" (click)= "goToHeist()" >
             <i class="bi bi-cash-coin" style="font-size: 50px; color: white;" ></i>
             <span class="badge rounded-pill bg-danger">Heist</span>
         </button>
     </div>
 
+    <!--Member List-->
     <div class="rows">
         <h1 class="text">Member List</h1>
         <div class="text-center"><button class="button" [routerLink]="['/create-member']" routerLinkActive="router-link-active">Add new member</button></div>
@@ -26,7 +26,7 @@
                     <p class="card-text">Sex: {{member.sex}}</p>
                     <p class="card-text">Skill: {{member.skill}}</p>
                     <p class="card-text">Status: {{member.status}}</p>
-                    <a href="#" class="btn center" style="color: white; background-color: red;">Add to heist</a>
+                    <a class="btn center" style="color: white; background-color: red;" (click)=addMemberToHeist(member)>Add to heist</a>
                     <button (click)= "updateMember(member.id)" class="btn btn-dark">Edit</button>
                     <button (click)= "deleteMember(member.id)" class="btn btn-dark"><i class="bi bi-trash"></i></button>
                 </div>
